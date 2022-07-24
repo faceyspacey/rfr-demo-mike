@@ -46,6 +46,9 @@ const routesMap = {
       } = getState()
       const video = await fetch(`/api/video/${slug}`)
 
+      console.log(`found a video ${video}`)
+
+
       if (!video) {
         return dispatch({ type: NOT_FOUND })
       }
