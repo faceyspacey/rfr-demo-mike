@@ -28,3 +28,8 @@ export const visitVideo = slug => ({
   type: 'VIDEO',
   payload: { slug }
 })
+
+export const findVideo = slug => ({
+  type: 'VIDEO',
+  payload: { slug }
+})

@@ -9,8 +9,8 @@ export default (state = {}, action = {}) => {
     }
     case 'VIDEO_FOUND': {
       const { slug, video } = action.payload
-      state[slug] = video
-      return state
+      // state[slug] = video
+      return { ...state, slug: video }
     }
     default:
       return state
