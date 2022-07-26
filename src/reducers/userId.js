@@ -1,4 +1,3 @@
 export default (state, action ) => {
-	const { userId } = action.payload
-	return { ...state, userId }
+	action.type === 'USERS' ? action.payload.users : state
 }

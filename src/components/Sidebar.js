@@ -49,6 +49,11 @@ const Sidebar = ({ onClick, path }) =>
     >
       FP
     </span>
+    <span
+      onClick={() => onClick('USERS')}
+    >
+      USERS 
+    </span>
 
     <div style={{height: 14 }} />
 

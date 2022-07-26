@@ -124,3 +124,23 @@ export const videosHash = videos.reduce((hash, video) => {
   hash[video.slug] = video
   return hash
 }, {})
+
+const users = [
+  {
+    userId: 123,
+    firstName: 'Mike',
+    lastName: 'Oristian',
+    handicap: 20.3
+  },
+  {
+    userId: 456,
+    firstName: 'James',
+    lastName: 'Gillmore',
+    handicap: 16.4 
+  },
+]
+
+export const usersHash = users.reduce((hash, user) => {
+  hash[user.userId] = user
+  return hash
+}, {})

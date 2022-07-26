@@ -48,7 +48,6 @@ const routesMap = {
 
       console.log(`found a video ${video}`)
 
-
       if (!video) {
         return dispatch({ type: NOT_FOUND })
       }
@@ -70,6 +69,17 @@ const routesMap = {
   ADMIN: {
     path: '/admin', // TRY: visit this path ADMIN
     role: 'admin', // + set the user's role to admin
+  },
+  USERS: {
+    path: '/users',
+    thunk: async (dispatch, getState) => {
+      // const {
+      //   location
+      // } = getState()
+      const users = await fetch(`/api/users`)
+      // console.log(`received users in routesMap ${JSON.stringify(users)}`)
+      dispatch({ type: 'USERS_FETCHED', payload: { users } })
+    },
   },
 }
 
