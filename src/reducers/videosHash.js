@@ -2,7 +2,7 @@ export default (state = {}, action = {}) => {
   switch (action.type) {
     case 'VIDEOS_FETCHED': {
       const { videos } = action.payload
-      return videos.reduce((videos, video) => {
+      videos.reduce((videos, video) => {
         state[video.slug] = video
         return video 
       }, state)
