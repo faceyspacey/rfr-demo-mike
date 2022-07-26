@@ -1,20 +1,19 @@
 import { videosHash, videosByCategory, usersHash } from './data'
 
 export default async path => {
-  switch (path) {
-    case '/api/videos/':
-      const videos = await findVideos(path.replace('/api/videos', ''))
-      return videos
-      break
-    case '/api/video':
-      const video =  await findVideo(path.replace('/api/video/', ''))
-      return video
-      break
-    case '/api/users':
-      const users = await allUsers(path.replace('/api/users', ''))
-      return users
-    default:
-      return []
+  if (path.indexOf('/api/videos') === 0) {
+    console.log('entered /api/videos')
+    const videos = await findVideos(path.replace('/api/videos/', ''))
+    console.log(videos)
+    return videos
+  } else if (path.indexOf('/api/video') === 0) {
+    const video = await findVideo(path.replace('/api/video/', ''))
+    return video
+  } else if (path.indexOf('/api/users') === 0) {
+    const users = await allUsers(path.replace('/api/users/', ''))
+    return users
+  } else {
+    return []
   }
 }
 

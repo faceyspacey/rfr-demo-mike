@@ -6,8 +6,9 @@ export default (state = {}, action = {}) => {
 		console.log(`users in reducer = ${users}`)
 		return users.reduce((users, user) => {
 		  state[user.userId] = user
-		  return state
+		//   return state
 		}, state)
+		// return state
 	  }
 	//   case 'USER_FOUND': {
 	// 	const { userId, user } = action.payload
